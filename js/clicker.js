@@ -170,7 +170,7 @@ upgrades = [
     {
         name: 'Kvalitetsspade',
         cost: 50,
-        clicks: 2,
+        clicks: 5000,
     },
     {
         name: 'Skottkärra',
@@ -180,7 +180,7 @@ upgrades = [
     {
         name: 'Grävmaskin',
         cost: 1000,
-        amount: 100,
+        amount: 100000,
     },
 ];
 
@@ -218,7 +218,7 @@ function createCard(upgrade) {
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             acquiredUpgrades++;
-            money -= upgrade.cost;
+            money += upgrade.cost;
             upgrade.cost *= 1.5;
             cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
